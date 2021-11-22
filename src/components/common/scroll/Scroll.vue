@@ -37,9 +37,11 @@ export default {
     this.scroll = new BScroll(this.$refs.wraper,{
       click: true,
       observeDOM: true,
-      observeImage: true,
       probeType: this.probeType,
-      pullUpLoad: this.pullUpLoad
+      pullUpLoad: this.pullUpLoad,
+      observeImage: {
+        debounceTime: 300
+      }
     }),
     //监听滚动的位置
     this.scroll.on('scroll', (position => {
